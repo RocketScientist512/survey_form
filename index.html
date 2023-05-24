@@ -23,6 +23,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-55CLPWF');</script>
 <!-- End Google Tag Manager -->
+    
+    <script>
+      function PassData(ev){
+        ev.preventDefault();
+        console.log("Form Submitted");
+      }
+      document.getElementsByClassName("form-group").addEventListener("click", submit_form_success);
+    </script>
    
     </head>
 <body>
@@ -232,7 +240,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="form-group">
-      <button type="submit" id="submit" class="submit-button">
+      <button type="submit" id="submit" class="submit-button" onclick="PassData(event)">
         Submit
       </button>
     </div>
