@@ -25,11 +25,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
     
     <script>
+      let value = NULL; 
       function PassData(ev){
         ev.preventDefault();
+        value = "success";
         console.log("Form Submitted");
       }
-      document.getElementsByClassName("form-group").addEventListener("click", submit_form_success);
+      document.getElementsByClassName("form-group").addEventListener("click", value);
     </script>
    
     </head>
