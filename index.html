@@ -24,16 +24,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-55CLPWF');</script>
 <!-- End Google Tag Manager -->
     
-    <script>
-      let value; 
-      function PassData(ev){
-        ev.preventDefault();
-        value = "success";
-        console.log("Form Submitted");
-        document.getElementsByClassName("form-group").addEventListener("click", value);
-      }
-      
-    </script>
+
    
     </head>
 <body>
@@ -243,7 +234,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
 
     <div class="form-group">
-      <button type="submit" id="submit" class="submit-button" onclick="PassData(event)">
+      <button type="submit" id="submit" class="submit-button" onclick="return PassData(event)">
         Submit
       </button>
     </div>
