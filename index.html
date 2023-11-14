@@ -34,25 +34,31 @@ f=false,w=window,d=document,vwoCodeEl=d.querySelector('#vwoCode'),code={use_exis
         var age = document.querySelector('#number').value; 
         var cRole = document.querySelector('#dropdown').value;
         var fFeature = document.querySelector('#most-like').value;
+        console.log(age);
+        console.log(cRole);
+        console.log(fFeature);
 
-      	// Attribute
-      	window.VWO = window.VWO || [];
-      	VWO.visitor = VWO.visitor || function () {VWO.push(["visitor"].concat([].slice.call(arguments)))};
-      	// Replace <number_value> with your actual attribute value
-      	VWO.visitor({ "age": age });
-
+      	//Attribute
+        	// Do not change anything in the following two lines
+        	window.VWO = window.VWO || [];
+        	VWO.visitor = VWO.visitor || function () {VWO.push(["visitor"].concat([].slice.call(arguments)))};
         
-      	// Event - Form Success
-      	window.VWO = window.VWO || [];
-      	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
-      
-      	// Replace the property values with your actual values
-      	VWO.event("formSubmissionSuccess", {
-      		"form_success": "true",
-      		"currentRole": cRole,
-      		"favoriteFeature": fFeature
-      	});
+        	// Replace "<text_value>" with your actual attribute value
+        	VWO.visitor({ "role": cRole });
 
+
+        //Form Submit - Event
+        	// Do not change anything in the following two lines
+        	window.VWO = window.VWO || [];
+        	VWO.event = VWO.event || function () {VWO.push(["event"].concat([].slice.call(arguments)))};
+        
+        	// Replace the property values with your actual values
+        	VWO.event("formSubmitSuccess", {
+        		"age": age,
+        		"role": cRole,
+        		"feature": fFeature
+        	});        
+      	
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
         	'event': 'form_submit_success'
